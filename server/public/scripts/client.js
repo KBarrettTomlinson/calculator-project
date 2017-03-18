@@ -13,8 +13,9 @@ function eventListeners(){
     calculation = {};
     console.log("calculation object after clear", calculation);
     $('#output').empty();
-    $('input').empty();
     $('.operator').removeClass('highlight');
+    $('#valueOne').val('');
+    $('#valueTwo').val('');
   });//ends clears button listener
 
   $('#adds').on("click",function(){
@@ -54,7 +55,25 @@ function eventListeners(){
     calculation.valueOne = $('#valueOne').val();
     calculation.valueTwo = $('#valueTwo').val();
     console.log("This is the calculation object after retrieving the values", calculation);
+
+    performCalculation(calculation);
   });//ends equals button listener
-
-
 }//ends eventListeners function
+
+
+function performCalculation(object){
+  $.ajax({
+    type: 'POST',
+    url: '/calculator',
+    data: object,
+    success: function(response){
+      console.log("this is the response from the performCalculation post", response);
+      updateCalculationDisplay(response);
+    }
+  });//ends ajax POST
+}//ends performCalculation
+
+function updateCalculationDisplay(object){
+  $('#output').append('<span>'+object.valueFinal+'</span>');
+
+}//ends updateCalculationDisplay
