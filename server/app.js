@@ -11,9 +11,9 @@ var app = express(); //sets var app to the object returned by the function expre
 var port = 5000; //sets up a port connection so that everything can communitcate
 
 //uses
-// app.use( bodyParser.urlencoded( {extended: true}));//body-parser middleware
-// app.use( express.static ('server/public')); //static sets up root folder
-// app.use( '/', index ); //index is returned for get at '/' which is fired off when browser loads
+app.use( bodyParser.urlencoded( {extended: true}));//body-parser middleware
+app.use( express.static ('server/public')); //static sets up root folder
+app.use( '/', index ); //index is returned for get at '/' which is fired off when browser loads
 // app.use( '/calculator', calculator); //caluculator sends get and post requests to be caluclated at the calculator module
 // app.use( '/*', error );//catch all error for requests
 
