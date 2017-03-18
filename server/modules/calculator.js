@@ -33,11 +33,11 @@ router.post('/',function(req,res){
       if (y !== 0) {
         z = x / y;
       } else {
-        z = "You Cannot Divide by Zero";
+        z = "#DIV/0!";
       }
       break;
     default:
-      z = "Something has gone horribly wrong";
+      z = "OH NO!";
       break;
   }//ends switch statement
   calculation.valueFinal = z;
