@@ -6,7 +6,7 @@ html,body{
 body{
   height: 100%;
   width: 100%;
-  background-color: goldenrod;
+  background-color: darkgoldenrod;
 }
 
 h1{
@@ -22,7 +22,7 @@ div{
 
 input{
   height: 60px;
-  width: 120px;
+  width: 240px;
   margin: 5px;
   text-align: center;
   font-size: 24px;
@@ -74,6 +74,14 @@ text-align: center;
 
 }
 
+.operator{
+  height: 60px;
+  width: 60px;
+  margin: 5px;
+  text-align: center;
+  font-size: 24px;
+}
+
 #adds{
 
 }
@@ -92,4 +100,18 @@ text-align: center;
 
 #valueTwo{
 
+}
+
+#spacerBanner{
+  margin: 0 auto;
+  width: 900px;
+  height: 35px;
+  background-color: pink;
+}
+
+#numberButtons{
+  margin: 0 auto;
+  width: 900px;
+  height: 550px;
+  background-color: slategray;
 }
