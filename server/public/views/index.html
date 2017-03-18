@@ -4,17 +4,39 @@
   <head>
     <meta charset="utf-8">
     <title>Little Professor Calculator</title>
+    <link rel="stylesheet" href="views/style.css">
     <script type="text/javascript" src = 'vendors/jquery.js'></script>
     <script type="text/javascript" src = 'scripts/client.js'></script>
   </head>
 <!-- ends head -->
 
   <body>
-    <h1>Is this thing on?</h1>
+    <div id = 'wrapper'>
+    <h1>Little Professor Calculator</h1>
     <!-- testing the connection -->
+    <div id = 'calculation'>
+      <div id = 'output'>
+          <!-- <span>Calculating<span> -->
+      </div>
+      <!-- ends output div -->
+    </div>
+    <!-- ends calculation div -->
+    <div id = 'inputValues'>
+      <input type='text' placeholder='value one' id='valueOne'>
+      <button id='adds'>+</button>
+      <button id='subtracts'>-</button>
+      <button id='multiplies'>*</button>
+      <button id='divides'>/</button>
+      <input type='text' placeholder='value two' id='valueTwo'
+    </div>
+    <!-- ends inputValues div -->
 
+
+
+
+    </div>
+    <!-- ends wrapper div -->
   </body>
 <!-- ends body -->
-
 </html>
 <!-- ends everything -->
