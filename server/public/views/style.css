@@ -22,7 +22,7 @@ div{
 
 input{
   height: 60px;
-  width: 240px;
+  width: 180px;
   margin: 5px;
   text-align: center;
   font-size: 24px;
@@ -31,11 +31,11 @@ input{
 }
 
 button{
-  height: 60px;
-  width: 60px;
-  margin: 5px;
-  text-align: center;
-  font-size: 24px;
+
+}
+
+button:hover{
+  background-color: gainsboro
 }
 
 #wrapper{
@@ -98,7 +98,22 @@ text-align: center;
 
 }
 
+.highlight{
+background-color: lavenderblush;
+font-size: 32px;
+}
+
 #valueTwo{
+
+}
+
+#equals{
+
+
+}
+
+#clears{
+
 
 }
 
