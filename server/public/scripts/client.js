@@ -84,28 +84,32 @@ function performCalculation(object){
   console.log("inside performCalculation", object);
   if (isNaN(x) || isNaN(y)){
     object.valueFinal = ("Something is wrong, resetting...");
+    console.log(object.valueFinal);
     console.log("before update");
     updateCalculationDisplay(object);
     console.log("before reset");
-    setTimeout(function(){console.log("setTimeout");},10000);
-    resetCaluclator();
-    return;
+    setTimeout(function(){resetCaluclator();},3000);
+    console.log("after reset");
   }//ends if
+  else{
   $.ajax({
     type: 'POST',
     url: '/calculator',
     data: object,
     success: function(response){
       console.log("this is the response from the performCalculation post", response);
-      updateCalculationDisplay(response);
+      $('#output').append('<span>Calculating...</span>');
+      setTimeout(function(){updateCalculationDisplay(response);},3000);
+      $('button').prop('disabled',true);
+      $('button#clearsBanner').prop('disabled',false);
+      $('button#clearsTenKey').prop('disabled',false);
     }
   });//ends ajax POST
-  $('button').prop('disabled',true);
-  $('button#clearsBanner').prop('disabled',false);
-  $('button#clearsTenKey').prop('disabled',false);
+}//ends else
 }//ends performCalculation
 
 function resetCaluclator(){
+  console.log("I'm resetting everything back to how it used to be.");
   calculation = {};
   $('#output').empty();
   $('.operator').removeClass('highlight');
@@ -130,6 +134,7 @@ function switchInput(){
 }//ends toggleInputArray
 
 function updateCalculationDisplay(object){
+  $('#output').empty();
   $('#output').append('<span>'+object.valueFinal+'</span>');
 }//ends updateCalculationDisplay
 
