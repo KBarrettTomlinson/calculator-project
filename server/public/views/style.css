@@ -126,9 +126,40 @@ font-size: 32px;
   background-color: pink;
 }
 
-#numberButtons{
+#numberButtonsDiv{
   margin: 0 auto;
   width: 900px;
   height: 350px;
   background-color: slategray;
+
+}
+
+.tenKey{
+  height: 78px;
+  width: 78px;
+  margin: 5px;
+  text-align: center;
+  font-size: 24px;
+  background-color: darkgoldenrod;
+
+}
+
+#oneThroughThree{
+
+
+}
+
+#fourThroughSix{
+
+
+}
+
+#sevenThroughNine{
+
+
+}
+
+#setZeroGo{
+
+
 }
