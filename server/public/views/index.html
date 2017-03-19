@@ -22,14 +22,14 @@
     </div>
     <!-- ends calculation div -->
     <div id = 'inputValues'>
-      <button data-id='clears' id='clears' class='operator'>SET</button>
+      <button data-id='clears' data-type='reset' id='clears' class='operator'>SET</button>
       <input type='text' placeholder='value one' id='valueOne'>
-      <button data-id='adds' id='adds' class='operator'>+</button>
-      <button data-id='subtracts' id='subtracts' class='operator'>-</button>
-      <button data-id='multiplies' id='multiplies' class='operator'>*</button>
-      <button data-id='divides' id='divides' class='operator'>/</button>
+      <button data-id='adds' data-type='operator' id='adds' class='operator'>+</button>
+      <button data-id='subtracts' data-type='operator' id='subtracts' class='operator'>-</button>
+      <button data-id='multiplies' data-type='operator' id='multiplies' class='operator'>*</button>
+      <button data-id='divides' data-type='operator' id='divides' class='operator'>/</button>
       <input type='text' placeholder='value two' id='valueTwo'>
-      <button data-id='equals' id='equals' class='operator'>GO</button>
+      <button data-id='equals' data-type='run' id='equals' class='operator'>GO</button>
     </div>
     <!-- ends inputValues div -->
     <div id = 'spacerBanner'>
@@ -37,31 +37,31 @@
     <!-- ends spacerBanner -->
     <div id = 'numberButtonsDiv'>
       <div id = 'oneThroughThree'>
-        <button data-id='1' id='1' class='tenKey'>1</button>
-        <button data-id='2' id='2' class='tenKey'>2</button>
-        <button data-id='3' id='3' class='tenKey'>3</button>
-        <button data-id='adds' class='tenKey'>+</button>
+        <button data-id='1' data-type='number' id='1' class='tenKey'>1</button>
+        <button data-id='2' data-type='number' id='2' class='tenKey'>2</button>
+        <button data-id='3' data-type='number' id='3' class='tenKey'>3</button>
+        <button data-id='adds' data-type='operator' class='tenKey'>+</button>
       </div>
       <!-- ends oneThroughThree div -->
       <div id = 'fourThroughSix'>
-        <button data-id='4' id='4' class='tenKey'>4</button>
-        <button data-id='5' id='5' class='tenKey'>5</button>
-        <button data-id='6' id='6' class='tenKey'>6</button>
-        <button data-id='subtracts' class='tenKey'>-</button>
+        <button data-id='4' data-type='number' id='4' class='tenKey'>4</button>
+        <button data-id='5' data-type='number' id='5' class='tenKey'>5</button>
+        <button data-id='6' data-type='number' id='6' class='tenKey'>6</button>
+        <button data-id='subtracts' data-type='operator' class='tenKey'>-</button>
       </div>
       <!-- ends fourThroughSix -->
       <div id = 'sevenThroughNine'>
-        <button data-id='7' id='7' class='tenKey'>7</button>
-        <button data-id='8' id='8' class='tenKey'>8</button>
-        <button data-id='9' id='9' class='tenKey'>9</button>
-        <button data-id='multiplies' class='tenKey'>*</button>
+        <button data-id='7' data-type='number' id='7' class='tenKey'>7</button>
+        <button data-id='8' data-type='number' id='8' class='tenKey'>8</button>
+        <button data-id='9' data-type='number' id='9' class='tenKey'>9</button>
+        <button data-id='multiplies' data-type='operator' class='tenKey'>*</button>
       </div>
       <!-- ends sevenThroughNine -->
       <div id = 'setZeroGo'>
-        <button data-id='clears' class='tenKey'>SET</button>
-        <button data-id='0' id='0' class='tenKey'>0</button>
-        <button data-id='equals' class='tenKey'>GO</button>
-        <button data-id='divides' class='tenKey'>/</button>
+        <button data-id='clears' data-type='reset' class='tenKey'>SET</button>
+        <button data-id='0' data-type='number' id='0' class='tenKey'>0</button>
+        <button data-id='equals'  data-type='run' class='tenKey'>GO</button>
+        <button data-id='divides' data-type='operator' class='tenKey'>/</button>
       </div>
       <!-- ends setZeroGo -->
     </div>
