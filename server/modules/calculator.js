@@ -33,7 +33,7 @@ router.post('/',function(req,res){
       if (y !== 0) {
         z = x / y;
       } else {
-        z = "#DIV/0!";
+        z = "You Cannot Divide By Zero!";
       }
       break;
     default:
