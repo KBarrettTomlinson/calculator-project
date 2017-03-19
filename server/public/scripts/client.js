@@ -12,116 +12,58 @@ $(document).ready(function(){
 });//ends document ready
 
 //functions organized alphabetically
-function buttonActions(buttonType,thisObject){
+function buttonActions(buttonID, buttonType,thisObject){
   console.log(buttonType,"buttonType");
+  console.log(buttonID, "buttonID");
+
   switch (buttonType){
-    case "clears":
+    case "reset":
       console.log("Alright, let's clean it up!");
       resetCaluclator();
-      break;
+      break;//ends case reset
 
-    case "adds":
-      console.log("Alright, let's do some adding!");
-      calculation.operator = "ADD";
+    case "operator":
+      switch(buttonID){
+        case "adds":
+          console.log("Alright, let's do some adding!");
+          calculation.operator = "ADD";
+          break;
+        case "subtracts":
+          console.log("Alright, let's do some subtracting!");
+          calculation.operator = "SUBTRACT";
+          break;
+        case "multiplies":
+          console.log("Alright, let's do some multiplying!");
+          calculation.operator = "MULTIPLY";
+          break;
+        case "divides":
+          console.log("Alright, let's do some dividing!");
+          calculation.operator = "DIVIDE";
+          break;
+      }//ends operator ID switch
       highlightOperator(thisObject);
       switchInput();
-      break;
+      break;//ends case operator
 
-    case "subtracts":
-      console.log("Alright, let's do some subtracting!");
-      calculation.operator = "SUBTRACT";
-      highlightOperator(thisObject);
-      switchInput();
-      break;
+    case "number":
+      updateValueString(buttonID);
+      updateInputDisplay();
+      break;//ends case number
 
-    case "multiplies":
-      console.log("Alright, let's do some multiplying!");
-      calculation.operator = "MULTIPLY";
-      highlightOperator(thisObject);
-      switchInput();
-      break;
-
-    case "divides":
-      console.log("Alright, let's do some dividing!");
-      calculation.operator = "DIVIDE";
-      highlightOperator(thisObject);
-      switchInput();
-      break;
-
-    case "equals":
+    case "run":
       console.log("It's time to compute!");
       calculation.valueOne = $('#valueOne').val();
       calculation.valueTwo = $('#valueTwo').val();
       performCalculation(calculation);
-      break;
-
-    case 1:
-      console.log("1");
-      updateValueString(buttonType);
-      updateInputDisplay();
-      break;
-
-    case 2:
-      console.log("2");
-      updateValueString(buttonType);
-      updateInputDisplay();
-      break;
-
-    case 3:
-      console.log("3");
-      updateValueString(buttonType);
-      updateInputDisplay();
-      break;
-
-    case 4:
-      console.log("4");
-      updateValueString(buttonType);
-      updateInputDisplay();
-      break;
-
-    case 5:
-      console.log("5");
-      updateValueString(buttonType);
-      updateInputDisplay();
-      break;
-
-    case 6:
-      console.log("6");
-      updateValueString(buttonType);
-      updateInputDisplay();
-      break;
-
-    case 7:
-      console.log("7");
-      updateValueString(buttonType);
-      updateInputDisplay();
-      break;
-
-    case 8:
-      console.log("8");
-      updateValueString(buttonType);
-      updateInputDisplay();
-      break;
-
-    case 9:
-      console.log("9");
-      updateValueString(buttonType);
-      updateInputDisplay();
-      break;
-
-    case 0:
-      console.log("0");
-      updateValueString(buttonType);
-      updateInputDisplay();
-      break;
-  }//ends switch
-}//ends buttonActions
+      break;//ends case run
+    }//ends type switch
 
 function eventListeners(){
   $('#wrapper').on('click','button',function(){
-    var buttonType = $(this).data('id');
+    var buttonType = $(this).data('type');
+    var buttonID = $(this).data('id');
     var thisObject = $(this);
-    buttonActions(buttonType,thisObject);
+    buttonActions(buttonID, buttonType, thisObject);
   });//ends generic listener
 }//ends eventListeners function
 
