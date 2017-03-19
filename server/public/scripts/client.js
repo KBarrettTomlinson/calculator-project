@@ -9,58 +9,52 @@ $(document).ready(function(){
 
 function eventListeners(){
 
-  $(this).on('click',function(){
-    console.log($(this).data('id'));
-    console.log($('#clears').data('id'));
-    // var action = $(this).data('id');
+  $('#wrapper').on('click','button',function(){
+    var buttonType = $(this).data('id');
+    var thisObject = $(this);
+    buttonActions(buttonType,thisObject);
   });//ends generic listener
-
-  //
-  //
-  // $('#clears').on('click',function(){
-  //   console.log("Alright, let's clean it up!");
-  //   resetCaluclator();
-  // });//ends clears button listener
-  //
-  // $('#adds').on("click",function(){
-  //   console.log("Alright, let's do some adding!");
-  //   calculation.operator = "ADD";
-  //   highlightOperator($(this));
-  // });//ends adds button listener
-  //
-  // $('#subtracts').on("click",function(){
-  //   console.log("Alright, let's do some subtracting!");
-  //   calculation.operator = "SUBTRACT";
-  //   console.log(calculation);
-  //   $('.operator').removeClass('highlight');
-  //   $(this).addClass('highlight');
-  // });//ends subtracts button listener
-  //
-  // $('#multiplies').on("click",function(){
-  //   console.log("Alright, let's do some multiplying!");
-  //   calculation.operator = "MULTIPLY";
-  //   console.log(calculation);
-  //   $('.operator').removeClass('highlight');
-  //   $(this).addClass('highlight');
-  // });//ends multiplies button listener
-  //
-  // $('#divides').on("click",function(){
-  //   console.log("Alright, let's do some dividing!");
-  //   calculation.operator = "DIVIDE";
-  //   console.log(calculation);
-  //   $('.operator').removeClass('highlight');
-  //   $(this).addClass('highlight');
-  // });//ends divides button listener
-  //
-  // $('#equals').on('click',function(){
-  //   console.log("It's time to compute!");
-  //   calculation.valueOne = $('#valueOne').val();
-  //   calculation.valueTwo = $('#valueTwo').val();
-  //   console.log("This is the calculation object after retrieving the values", calculation);
-  //
-  //   performCalculation(calculation);
-  // });//ends equals button listener
 }//ends eventListeners function
+
+function buttonActions(buttonType,thisObject){
+  switch (buttonType){
+    case "clears":
+      console.log("Alright, let's clean it up!");
+      resetCaluclator();
+      break;
+
+    case "adds":
+      console.log("Alright, let's do some adding!");
+      calculation.operator = "ADD";
+      highlightOperator(thisObject);
+      break;
+
+    case "subtracts":
+      console.log("Alright, let's do some subtracting!");
+      calculation.operator = "SUBTRACT";
+      highlightOperator(thisObject);
+      break;
+
+    case "multiplies":
+      console.log("Alright, let's do some multiplying!");
+      calculation.operator = "MULTIPLY";
+      highlightOperator(thisObject);
+      break;
+
+    case "divides":
+      console.log("Alright, let's do some dividing!");
+      calculation.operator = "DIVIDE";
+      highlightOperator(thisObject);
+      break;
+
+    case "equals":
+      console.log("It's time to compute!");
+      calculation.valueOne = $('#valueOne').val();
+      calculation.valueTwo = $('#valueTwo').val();
+      performCalculation(calculation);
+      break;
+  }//ends switch
+}//ends buttonActions
 
 function highlightOperator(thisObject){
   $('.operator').removeClass('highlight');
