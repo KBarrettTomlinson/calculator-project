@@ -7,6 +7,7 @@ var currentInput = "valueOne";
 //document ready
 $(document).ready(function(){
   console.log("I'm Here For You.");
+  resetCaluclator();
   eventListeners();
 
 });//ends document ready
@@ -44,11 +45,13 @@ function buttonActions(buttonID, buttonType,thisObject){
       console.log("inside operator switch thisObject", thisObject);
       highlightOperator(thisObject);
       switchInput();
+      setFocus();
       break;//ends case operator
 
     case "number":
       updateValueString(buttonID);
       updateInputDisplay();
+      setFocus();
       break;//ends case number
 
     case "run":
@@ -97,6 +100,9 @@ function performCalculation(object){
       updateCalculationDisplay(response);
     }
   });//ends ajax POST
+  $('button').prop('disabled',true);
+  $('button#clearsBanner').prop('disabled',false);
+  $('button#clearsTenKey').prop('disabled',false);
 }//ends performCalculation
 
 function resetCaluclator(){
@@ -110,7 +116,13 @@ function resetCaluclator(){
   currentString = valueOneString;
   valueOneString = "";
   valueTwoString= "";
+  setFocus();
+  $('button').prop('disabled',false);
 }//ends resetCaluclator
+
+function setFocus(){
+    $('#'+currentInput).focus();
+}//ends setFocus
 
 function switchInput(){
   currentInput = "valueTwo";
