@@ -41,6 +41,7 @@ function buttonActions(buttonID, buttonType,thisObject){
           calculation.operator = "DIVIDE";
           break;
       }//ends operator ID switch
+      console.log("inside operator switch thisObject", thisObject);
       highlightOperator(thisObject);
       switchInput();
       break;//ends case operator
@@ -57,6 +58,7 @@ function buttonActions(buttonID, buttonType,thisObject){
       performCalculation(calculation);
       break;//ends case run
     }//ends type switch
+}//ends buttonActions
 
 function eventListeners(){
   $('#wrapper').on('click','button',function(){
@@ -69,6 +71,7 @@ function eventListeners(){
 
 function highlightOperator(thisObject){
   $('.operator').removeClass('highlight');
+  $('.tenKey').removeClass('highlight');
   thisObject.addClass('highlight');
 }//ends highlightOperator
 
@@ -100,6 +103,7 @@ function resetCaluclator(){
   calculation = {};
   $('#output').empty();
   $('.operator').removeClass('highlight');
+  $('.tenKey').removeClass('highlight');
   $('#valueOne').val('');
   $('#valueTwo').val('');
   currentInput = "valueOne";
@@ -123,6 +127,7 @@ function updateInputDisplay(){
 }//ends updateInputDisplay
 
 function updateValueString(char){
+  currentString = $('#'+currentInput).val();
   console.log(char);
   console.log(currentString);
   char = char.toString();

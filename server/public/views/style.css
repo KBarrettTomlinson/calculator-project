@@ -1,3 +1,5 @@
+/*elements are organize by the order in which they appear in the HTML*/
+
 html,body{
   margin: 0;
   padding: 0;
@@ -38,6 +40,9 @@ button{
 button:hover{
   background-color: gainsboro
 }
+
+/*Classes are organized by the order in which they appear in the HTML*/
+/*.highlight class is at the bottom of the page, it is used by two elelment classes*/
 
 #wrapper{
 text-align: center;
@@ -100,10 +105,7 @@ text-align: center;
 
 }
 
-.highlight{
-background-color: lavenderblush;
-font-size: 32px;
-}
+
 
 #valueTwo{
 
@@ -129,22 +131,22 @@ font-size: 32px;
 #numberButtonsDiv{
   margin: 0 auto;
   width: 900px;
-  height: 350px;
+  height: 365px;
   background-color: slategray;
-
 }
 
 .tenKey{
-  height: 78px;
-  width: 78px;
+  height: 80px;
+  width: 80px;
   margin: 5px;
   text-align: center;
-  font-size: 24px;
+  font-size: 32px;
   background-color: darkgoldenrod;
 
 }
 
 #oneThroughThree{
+  padding-top: 3px;
 
 
 }
@@ -162,4 +164,9 @@ font-size: 32px;
 #setZeroGo{
 
 
+}
+
+.highlight{
+background-color: lavenderblush;
+font-size: 32px;
 }
